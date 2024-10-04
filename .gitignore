@@ -1,0 +1,13 @@
+# binary files
+/bin/
+*.class
+
+# build system (gradle, maven)
+/build/
+/.gradle/
+/target/
+
+# eclipse files
+.project
+.classpath
+/.settings/
