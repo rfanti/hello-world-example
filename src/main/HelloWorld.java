@@ -6,6 +6,8 @@ public class HelloWorld {
 	public HelloWorld(String name) {
 		this.name = name;
 	}
-	
 
+	public String getHello() {
+		return "Hello world, " + name;
+	}
 }

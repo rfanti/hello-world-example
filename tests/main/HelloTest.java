@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 class HelloTest {
 
 	@Test
-	void testGettHello() {
-		HelloWorld hw = new HelloWorld("Guilherme");
+	void testGetHello() {
+		HelloWorld hw = new HelloWorld("Guilherme");	
+		assertEquals("Hello world, Guilherme", hw.getHello());
 	}
-
 }
