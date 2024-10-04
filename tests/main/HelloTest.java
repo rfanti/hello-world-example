@@ -8,7 +8,7 @@ class HelloTest {
 
 	@Test
 	void testGettHello() {
-		HelloWorld hw = new HelloWorld();
+		HelloWorld hw = new HelloWorld("Guilherme");
 	}
 
 }
