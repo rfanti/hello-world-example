@@ -40,7 +40,7 @@
 
     <!-- Plugins Maven, como o Surefire, que executa os testes -->
     <build>
- <reporting>
+ 
         <plugins>
             <!-- Plugin para compilar o código-fonte com a versão correta do Java -->
             <plugin>
@@ -68,7 +68,8 @@
                 <configLocation>checkstyle.xml</configLocation>
             </configuration>
         </plugin>
+                 
         </plugins>
-</reporting>
+
     </build>
 </project>
