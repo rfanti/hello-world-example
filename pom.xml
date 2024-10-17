@@ -40,6 +40,7 @@
 
     <!-- Plugins Maven, como o Surefire, que executa os testes -->
     <build>
+ <reporting>
         <plugins>
             <!-- Plugin para compilar o código-fonte com a versão correta do Java -->
             <plugin>
@@ -60,20 +61,14 @@
             </plugin>
                  <!-- Plugin Checkstyle para análise do código -->
         <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-checkstyle-plugin</artifactId>
-    <version>3.5.0</version>
-    <configuration>
-        <configLocation>checkstyle.xml</configLocation>
-    </configuration>
-    <executions>
-        <execution>
-            <goals>
-                <goal>check</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <configLocation>checkstyle.xml</configLocation>
+            </configuration>
+        </plugin>
         </plugins>
+</reporting>
     </build>
 </project>
