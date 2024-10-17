@@ -6,7 +6,8 @@ Fluxo de Trabalho:
 2. O pipeline irá clonar a versão mais recente do código, para ter certeza de que está trabalhando com a versão mais atual
 3. Após, o ambiente será preparado considerando as dependências configuradas
 4. O código-fonte será então compilado usando o Maven (por meio de mvn clean install), a fim de verificar que não haja erros de compilação/sintaxe
-5. Testes unitários serão executados, com o posterior fornecimento (por meio do Surefire plugin) de relatório detalhado dos resultados
-6. Tendo sucesso em todos os tests, o pipeline é marcado como bem-sucedido; havendo erro, exibe como falha e notifica o usuário a fim de que possa ser feita a correção para posterior integração à produção.
+5. Por meio do Checkstyle, será verificada a existência de violação de estilo no código - havendo problemas, erros serão reportados
+6. Testes unitários serão executados, com o posterior fornecimento (por meio do Surefire plugin) de relatório detalhado dos resultados
+7. Tendo sucesso em todos os tests, o pipeline é marcado como bem-sucedido; havendo erro, exibe como falha e notifica o usuário a fim de que possa ser feita a correção para posterior integração à produção.
 
 
