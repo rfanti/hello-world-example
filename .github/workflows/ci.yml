@@ -35,6 +35,20 @@ jobs:
       - name: Run Unit Tests
         run: mvn test
 
+      # Extract test results and display passed/total
+      - name: Get test results
+        run: |
+          # Extract the number of tests from the surefire report
+          passed_tests=$(grep -oP '(?<=Tests run: )\d+(?=, Failures: 0, Errors: 0, Skipped: 0)' target/surefire-reports/*.txt | awk '{sum+=$1} END {print sum}')
+          total_tests=$(grep -oP '(?<=Tests run: )\d+' target/surefire-reports/*.txt | awk '{sum+=$1} END {print sum}')
+          if [ -z "$passed_tests" ]; then
+            passed_tests=0
+          fi
+          if [ -z "$total_tests" ]; then
+            total_tests=0
+          fi
+          echo "Passed $passed_tests / $total_tests tests"
+
       - name: Generate Test Report
         run: mvn surefire-report:report
 
