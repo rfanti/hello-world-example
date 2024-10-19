@@ -4,7 +4,8 @@
 package main;
 
 /**
- * The HelloWorld class represents a simple example that stores a name and generates a greeting message.
+ * The HelloWorld class represents a simple example that stores a
+ * name and generates a greeting message.
  */
 public class HelloWorld {
 	/**
@@ -30,4 +31,3 @@ public class HelloWorld {
 		return "Hello world, " + name;
 	}
 }
- 
