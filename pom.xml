@@ -50,7 +50,8 @@
 
     <!-- Plugins Maven, como o Surefire, que executa os testes -->
     <build>
- 
+        <sourceDirectory>src/</sourceDirectory>
+        <testSourceDirectory>tests/</testSourceDirectory>
         <plugins>
             <!-- Plugin para compilar o código-fonte com a versão correta do Java -->
             <plugin>
@@ -70,7 +71,7 @@
                  <!-- <version>2.22.2</version> -->
                  <version>3.5.1</version>
                  <configuration>
-                    <!-- <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory> -->
+                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                     <linkXRef>false</linkXRef> <!-- Desativa o XRef -->
                 </configuration>
             </plugin>
@@ -106,9 +107,11 @@
 						<goals>
 							<goal>report</goal>
 						</goals>
+                        <!--
 						<configuration>
 							<outputDirectory>target/jacoco-report</outputDirectory>
 						</configuration>
+                        -->
 					</execution>
 				</executions>
 			</plugin>
