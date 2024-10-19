@@ -8,7 +8,7 @@ class HelloTest {
 
 	@Test
 	void testGetHello() {
-		HelloWorld hw = new HelloWorld("Guilherme");	
-		assertEquals("Hello world, Guilherme", hw.getHello());
+		HelloWorld hw = new HelloWorld("José");	
+		assertEquals("Hello world, José", hw.getHello());
 	}
 }
