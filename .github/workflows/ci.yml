@@ -46,6 +46,10 @@ jobs:
         with:
           name: test-results
           path: target/surefire-reports/
+
+      # list surefire report files
+      # - name: List Surefire Report files
+      #   run: ls -alh target/surefire-reports/
       
       # Extract test results and display passed/total
       - name: Get test results
