@@ -1,3 +1,5 @@
+name: CI/CD Pipeline
+
 on:
   push:
     branches:
@@ -6,6 +8,7 @@ on:
     branches:
       - develop
       - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -43,7 +46,12 @@ jobs:
         with:
           name: test-results
           path: target/surefire-reports/
-      
+    
+      - name: Analyze Code with SonarCloud
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Usa o token do GitHub Secrets
+          run: mvn sonar:sonar -Dsonar.projectKey=rfanti_hello-world-example -Dsonar.organization=rfanti -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
       # Etapas específicas para a branch 'develop'
       - name: Deploy to Staging
         if: github.ref == 'refs/heads/develop'
