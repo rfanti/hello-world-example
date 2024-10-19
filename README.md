@@ -2,7 +2,7 @@
 
 Fluxo de Trabalho:
 
-1. Cada vez que um commit e push for feito em qualquer branch, o pipeline será disparado automaticamente
+1. Cada vez que um push develop -> main for feito, o pipeline será disparado automaticamente
 2. O pipeline irá clonar a versão mais recente do código, para ter certeza de que está trabalhando com a versão mais atual
 3. Após, o ambiente será preparado considerando as dependências configuradas
 4. O código-fonte será então compilado usando o Maven (por meio de mvn clean install), a fim de verificar que não haja erros de compilação/sintaxe
