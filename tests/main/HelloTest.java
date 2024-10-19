@@ -1,7 +1,17 @@
+
+/**
+ * package main;
+ */
 package main;
 
+/**
+ * import static org.junit.jupiter.api.Assertions.*;
+ */
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * import org.junit.jupiter.api.Test;
+ */
 import org.junit.jupiter.api.Test;
 
 /**
@@ -46,7 +56,8 @@ class HelloTest {
     }
 
     /**
-     * Testa o método getHello() com um nome inesperado para garantir que a saída não seja igual a um valor específico.
+     * Testa o método getHello() com um nome inesperado para garantir que a saída
+     * não seja igual a um valor específico.
      */
     @Test
     void testGetHelloWithUnexpectedName() {
