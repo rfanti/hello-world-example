@@ -5,7 +5,9 @@
 # build system (gradle, maven)
 /build/
 /.gradle/
-/target/
+#/target/
+#/target/jacoco-report/*
+#/target/surefire-reports/*
 
 # eclipse files
 .project
