@@ -33,9 +33,6 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Run checkstyle
-        run: mvn checkstyle:check
-
   test:
     runs-on: ubuntu-latest
     needs: build  # Ensure that the 'build' job runs successfully before 'test'
@@ -48,7 +45,11 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          
+      
+      # TODO configure the checkstyle plugin
+      # - name: Run checkstyle
+      #   run: mvn checkstyle:check
+
       - name: Run tests with Maven
         run: mvn clean test
         
@@ -61,7 +62,7 @@ jobs:
           name: test-results
           path: target/surefire-reports/
 
-      # list surefire report files
+      # TODO list surefire report files
       # - name: List Surefire Report files
       #   run: ls -alh target/surefire-reports/
       
@@ -82,6 +83,7 @@ jobs:
       - name: Generate Code Coverage Report
         run: mvn jacoco:report
       
+      # TODO configure the SonarCloud plugin
       # - name: Analyze Code with SonarCloud
       #   env:
       #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Usa o token do GitHub Secrets
