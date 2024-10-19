@@ -1,5 +1,11 @@
 on:
-  [pull_request]
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+      - main
 
 jobs:
   build:
@@ -37,3 +43,17 @@ jobs:
         with:
           name: test-results
           path: target/surefire-reports/
+      
+      # Etapas específicas para a branch 'develop'
+      - name: Deploy to Staging
+        if: github.ref == 'refs/heads/develop'
+        run: |
+          echo "Deploying to Staging Environment..."
+          # Adicione o comando para o deploy no ambiente de staging
+
+      # Etapas específicas para a branch 'main'
+      - name: Deploy to Production
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "Deploying to Production Environment..."
+          # Adicione o comando para o deploy no ambiente de produção
