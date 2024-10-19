@@ -34,7 +34,16 @@ jobs:
 
       - name: Run Unit Tests
         run: mvn test
+        
+      - name: Generate Test Report
+        run: mvn surefire-report:report
 
+      - name: Archive Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: target/surefire-reports/
+      
       # Extract test results and display passed/total
       - name: Get test results
         run: |
@@ -49,15 +58,6 @@ jobs:
           fi
           echo "Passed $passed_tests / $total_tests tests"
 
-      - name: Generate Test Report
-        run: mvn surefire-report:report
-
-      - name: Archive Test Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: target/surefire-reports/
-      
       # Etapas específicas para a branch 'develop'
       - name: Deploy to Staging
         if: github.ref == 'refs/heads/develop'
