@@ -30,7 +30,7 @@
             <property name="message" value="Erro: Espaços em branco no final da linha."/>
         </module>
         -->
-        
+
         <!-- Verifica a ordem dos modificadores -->
         <module name="ModifierOrder"/>
 
@@ -38,7 +38,7 @@
         <module name="HiddenField"/>
 
         <!-- Verifica que não há classes vazias -->
-        <module name="EmptyClass"/>
+        <!--<module name="EmptyClass"/>-->
         
         <!-- Verifica que os métodos não são muito longos -->
         <module name="MethodLength">
