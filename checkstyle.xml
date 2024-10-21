@@ -25,7 +25,9 @@
         <!-- Verifica a formatação do código -->
         <module name="WhitespaceAround"/>
         
-        <module name="TrailingWhitespace"/>
+        <module name="TrailingWhitespace">
+            <property name="message" value="Erro: Espaços em branco no final da linha."/>
+        </module>
         
         <!-- Verifica a ordem dos modificadores -->
         <module name="ModifierOrder"/>
