@@ -9,24 +9,24 @@ package main;
  */
 public class HelloWorld {
 	/**
-	 * The name to be used in the greeting message.
-	 */
+	* The name to be used in the greeting message.
+	*/
 	private String _name;
 
 	/**
-	 * Constructs a new HelloWorld instance with the specified name.
-	 *
-	 * @param name the name to be used in the greeting message
-	 */
+	* Constructs a new HelloWorld instance with the specified name.
+	*
+	* @param name the name to be used in the greeting message
+	*/
 	public HelloWorld(String name) {
 		this._name = name;
 	}
 
 	/**
-	 * Returns a greeting message that includes the stored name.
-	 *
-	 * @return a greeting message in the format "Hello world, {name}"
-	 */
+	* Returns a greeting message that includes the stored name.
+	*
+	* @return a greeting message in the format "Hello world, {name}"
+	*/
 	public String getHello() {
 		return "Hello world, " + this._name;
 	}
