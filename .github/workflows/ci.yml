@@ -47,8 +47,8 @@ jobs:
           java-version: '17'
       
       # TODO configure the checkstyle plugin
-      # - name: Run checkstyle
-      #   run: mvn checkstyle:check
+      - name: Run checkstyle
+        run: mvn checkstyle:check
 
       - name: Run tests with Maven
         run: mvn clean test
