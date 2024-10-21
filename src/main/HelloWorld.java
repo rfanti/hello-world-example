@@ -11,7 +11,7 @@ public class HelloWorld {
 	/**
 	 * The name to be used in the greeting message.
 	 */
-	private String name;
+	private String _name;
 
 	/**
 	 * Constructs a new HelloWorld instance with the specified name.
@@ -19,7 +19,7 @@ public class HelloWorld {
 	 * @param name the name to be used in the greeting message
 	 */
 	public HelloWorld(String name) {
-		this.name = name;
+		this._name = name;
 	}
 
 	/**
@@ -28,6 +28,6 @@ public class HelloWorld {
 	 * @return a greeting message in the format "Hello world, {name}"
 	 */
 	public String getHello() {
-		return "Hello world, " + name;
+		return "Hello world, " + this._name;
 	}
 }
