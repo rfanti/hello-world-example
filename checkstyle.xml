@@ -12,7 +12,7 @@
         <module name="JavadocVariable"/>
 
         <!-- Verifica a convenção de nomenclatura -->
-        <module name="RegexpChecker">
+        <module name="RegexpMultiline">
             <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
             <module name="ClassName"/>
             <module name="MethodName"/>
