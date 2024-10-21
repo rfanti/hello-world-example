@@ -4,24 +4,27 @@
     "https://checkstyle.sourceforge.io/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+    <!-- Verifica a convenção de nomenclatura -->
+    <module name="RegexpSingleline">
+        <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+        <module name="ClassName"/>
+        <module name="MethodName"/>
+        <module name="VariableName"/>
+    </module>
+
+    <module name="FileTabCharacter"/>
+
     <module name="TreeWalker">
 
         <!-- Verifica que as classes e métodos têm Javadoc -->
         <module name="JavadocType"/>
         <module name="JavadocMethod"/>
         <module name="JavadocVariable"/>
-
-        <!-- Verifica a convenção de nomenclatura 
-        <module name="RegexpMultiline">
-            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
-            <module name="ClassName"/>
-            <module name="MethodName"/>
-            <module name="VariableName"/>
-        </module>
-        -->
+        
+        
         <!-- Verifica a formatação do código -->
         <module name="WhitespaceAround"/>
-        <module name="FileTabCharacter"/>
+        
         <module name="TrailingWhitespace"/>
         
         <!-- Verifica a ordem dos modificadores -->
@@ -44,5 +47,6 @@
         </module>
 
     </module>
+    
 </module>
 
