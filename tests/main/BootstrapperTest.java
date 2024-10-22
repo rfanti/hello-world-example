@@ -13,19 +13,19 @@ import org.junit.jupiter.api.Test;
 /**
  * Classe de teste para a classe Bootstrapper.
  * 
- * Esta classe contém testes unitários para verificar o comportamento da classe Bootstrapper.
+ * Esta classe contï¿½m testes unitï¿½rios para verificar o comportamento da classe Bootstrapper.
  */
-public class BootstrapperTest {
+class BootstrapperTest {
 
     /**
-     * Instância da classe Bootstrapper usada nos testes.
+     * Instï¿½ncia da classe Bootstrapper usada nos testes.
      */
     private Bootstrapper bootstrapper;
 
     /**
-     * Configuração inicial antes de cada teste.
+     * Configuraï¿½ï¿½o inicial antes de cada teste.
      * 
-     * Este método é executado antes de cada método de teste para inicializar a instância da classe Bootstrapper.
+     * Este mï¿½todo ï¿½ executado antes de cada mï¿½todo de teste para inicializar a instï¿½ncia da classe Bootstrapper.
      */
     @BeforeEach
     public void setUp() {
@@ -33,9 +33,9 @@ public class BootstrapperTest {
     }
 
     /**
-     * Teste para verificar a inicialização da classe Bootstrapper.
+     * Teste para verificar a inicializaï¿½ï¿½o da classe Bootstrapper.
      * 
-     * Este teste verifica se a instância da classe Bootstrapper é inicializada corretamente.
+     * Este teste verifica se a instï¿½ncia da classe Bootstrapper ï¿½ inicializada corretamente.
      */
     @Test
     public void testInitialization() {
@@ -43,9 +43,9 @@ public class BootstrapperTest {
     }
 
     /**
-     * Teste para verificar o método start da classe Bootstrapper.
+     * Teste para verificar o mï¿½todo start da classe Bootstrapper.
      * 
-     * Este teste verifica se o método start da classe Bootstrapper retorna verdadeiro indicando sucesso.
+     * Este teste verifica se o mï¿½todo start da classe Bootstrapper retorna verdadeiro indicando sucesso.
      */
     @Test
     public void testStart() {
@@ -54,9 +54,9 @@ public class BootstrapperTest {
     }
 
     /**
-     * Teste para verificar o método stop da classe Bootstrapper.
+     * Teste para verificar o mï¿½todo stop da classe Bootstrapper.
      * 
-     * Este teste verifica se o método stop da classe Bootstrapper retorna verdadeiro indicando sucesso.
+     * Este teste verifica se o mï¿½todo stop da classe Bootstrapper retorna verdadeiro indicando sucesso.
      */
     @Test
     public void testStop() {
@@ -66,9 +66,9 @@ public class BootstrapperTest {
     }
 
     /**
-     * Teste para verificar o método restart da classe Bootstrapper.
+     * Teste para verificar o mï¿½todo restart da classe Bootstrapper.
      * 
-     * Este teste verifica se o método restart da classe Bootstrapper retorna verdadeiro indicando sucesso.
+     * Este teste verifica se o mï¿½todo restart da classe Bootstrapper retorna verdadeiro indicando sucesso.
      */
     @Test
     public void testRestart() {
@@ -76,5 +76,4 @@ public class BootstrapperTest {
         boolean result = bootstrapper.restart();
         assertTrue(result, "Bootstrapper should restart successfully");
     }
-
 }
