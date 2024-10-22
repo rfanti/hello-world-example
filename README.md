@@ -49,4 +49,3 @@ DIAGRAMA:
 
 
 https://lucid.app/lucidchart/cdd8f304-9db7-4daf-af25-7d22f1d293ea/edit?viewport_loc=-94%2C-261%2C2048%2C1047%2C0_0&invitationId=inv_c9066486-a728-41ff-b6c2-a3f5e9c74d43
- 
