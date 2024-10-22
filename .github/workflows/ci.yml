@@ -61,38 +61,40 @@ jobs:
         run: mvn clean test
         
       # Ação para gerar o relatório de testes
-      - name: Generate Test Report
-        run: mvn surefire-report:report -DoutputDirectory=target/surefire-reports/
+      #- name: Generate Test Report
+      #  run: mvn surefire-report:report -DoutputDirectory=target/surefire-reports/
 
       # Ação para armazenar os resultados dos testes
-      - name: Archive Test Results
-        uses: actions/upload-artifact@main
-        with:
-          name: test-results
-          path: target/surefire-reports/
-          if-no-files-found: warn            
+      
 
       # TODO list surefire report files
-      - name: List Surefire Report files
-        run: ls -alh target/surefire-reports/
+      #- name: List Surefire Report files
+      #  run: ls -alh target/surefire-reports/
       
       # Ação para obter os resultados dos testes
-      - name: Get test results
-        run: |
-          # Extract the number of tests from the surefire report
-          passed_tests=$(grep -oP '(?<=Tests run: )\d+(?=, Failures: 0, Errors: 0, Skipped: 0)' target/surefire-reports/*.txt | awk '{sum+=$1} END {print sum}')
-          total_tests=$(grep -oP '(?<=Tests run: )\d+' target/surefire-reports/*.txt | awk '{sum+=$1} END {print sum}')
-          if [ -z "$passed_tests" ]; then
-            passed_tests=0
-          fi
-          if [ -z "$total_tests" ]; then
-            total_tests=0
-          fi
-          echo "Passed $passed_tests / $total_tests tests"
+      # - name: Get test results
+        # run: |
+        #   # Extract the number of tests from the surefire report
+        #   passed_tests=$(grep -oP '(?<=Tests run: )\d+(?=, Failures: 0, Errors: 0, Skipped: 0)' target/surefire-reports/*.txt | awk '{sum+=$1} END {print sum}')
+        #   total_tests=$(grep -oP '(?<=Tests run: )\d+' target/surefire-reports/*.txt | awk '{sum+=$1} END {print sum}')
+        #   if [ -z "$passed_tests" ]; then
+        #     passed_tests=0
+        #   fi
+        #   if [ -z "$total_tests" ]; then
+        #     total_tests=0
+        #   fi
+        #   echo "Passed $passed_tests / $total_tests tests"
       
       # Ação para gerar o relatório de cobertura de código
       - name: Generate Code Coverage Report
         run: mvn jacoco:report -DoutputDirectory=target/jacoco-report/
+      
+      - name: Archive Test Results
+        uses: actions/upload-artifact@main
+        with:
+          name: test-results
+          path: target/jacoco-report/
+          if-no-files-found: warn
       
       # TODO configurar execução do SonarCloud plugin
       # - name: Analyze Code with SonarCloud
