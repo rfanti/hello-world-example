@@ -1,6 +1,6 @@
 **Hello World Example - detalhamento do processo de integração contínua (CI)**
 
-Fluxo de Trabalho:
+FLUXO DE TRABALHO:
 
 **Disparadores de Pipeline**
 
@@ -8,7 +8,7 @@ Fluxo de Trabalho:
 
 **Job: Build**
 
-* O pipeline irá clonar a versão mais recente do código, para ter certeza de que está trabalhando com a versão mais atual
+* Repositório é clonado
 * JDK 17 será configurado
 * Após, serão armazenadas em cache as dependências do Maven
 * O código-fonte será então compilado usando o Maven (por meio de mvn clean install), a fim de verificar que não haja erros de compilação/sintaxe
@@ -18,16 +18,17 @@ Fluxo de Trabalho:
 * JDK 17 será configurado
 * Checkstyle é executado (mvn checkstyle:check). Exemplo de reports:
 
+
 _[INFO] --- checkstyle:3.0.0:check (default-cli) @ hello-world-example ---
 [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS_
-* São executados os testes unitários (mvn clean test) e gerado relatório dos testes: https://github.com/rfanti/hello-world-example/actions/workflows/ci.yml
-* São gerados os relatórios de testes (mvn surefire-report:report): tendo sucesso em todos os tests, o pipeline é marcado como bem-sucedido; havendo erro, exibe como falha e notifica o usuário a fim de que possa ser feita a correção para posterior integração à produção.
-* Resultados dos testes são armazenados, sendo possível gerar relatório de cobertura de código (mvn jacoco:report)
+
+* São executados os testes unitários (mvn clean test) e gerado relatório dos testes: https://github.com/rfanti/hello-world-example/actions/workflows/ci.yml. Tendo sucesso em todos os tests, o pipeline é marcado como bem-sucedido; havendo erro, exibe como falha e notifica o usuário a fim de que possa ser feita a correção para posterior integração à produção.
+* Resultados dos testes são gerados e armazenados, sendo possível gerar relatório de cobertura de código (mvn jacoco:report)
 * Ao final, o código é analisado pelo SonarCloud, recebendo uma "etiqueta" (badge) conforme a classificação do resultado:
 
-<img width="952" alt="Screenshot 2024-10-21 at 20 44 10" src="https://github.com/user-attachments/assets/dbdc81b3-59b6-4db8-b6cc-faa7887661b7">
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rfanti_hello-world-example&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=rfanti_hello-world-example)
 
 **Job: Package**
 
