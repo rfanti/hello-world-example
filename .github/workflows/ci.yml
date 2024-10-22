@@ -57,7 +57,7 @@ jobs:
         run: mvn clean test
 
       - name: Generate Code Coverage Report
-        run: mvn jacoco:prepare-agent test jacoco:report -DoutputDirectory=target/jacoco-report/
+        run: mvn jacoco:report -DoutputDirectory=target/jacoco-report/
       
       - name: Archive Test Results
         uses: actions/upload-artifact@v3  # Corrigido para v2
