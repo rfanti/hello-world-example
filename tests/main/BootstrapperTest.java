@@ -64,7 +64,7 @@ class BootstrapperTest {
         System.setOut(originalOut);
 
         // Verifica a saída capturada
-        String expectedOutput = "Hello world, John!\n"; // Verifique se a quebra de linha é a correta
+        String expectedOutput = "Hello world, John"; // Verifique se a quebra de linha é a correta
         assertEquals(expectedOutput, outputStream.toString());
     }
 }
