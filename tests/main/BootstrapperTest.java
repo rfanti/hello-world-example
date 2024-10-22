@@ -49,7 +49,19 @@ class BootstrapperTest {
      */
     @Test
     public void testMain() {
-        boolean result = bootstrapper.main();
-        assertTrue(result, "Bootstrapper should start main successfully");
+        // Configura o fluxo de saída para capturar a impressão
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out; // Salva a saída original
+        System.setOut(new PrintStream(outputStream));
+
+        // Chama o método main da classe Bootstrapper
+        Bootstrapper.main(new String[]{});
+
+        // Restaura a saída original
+        System.setOut(originalOut);
+
+        // Verifica a saída capturada
+        String expectedOutput = "Hello, John!\n"; // Verifique se a quebra de linha é a correta
+        assertEquals(expectedOutput, outputStream.toString());
     }
 }
