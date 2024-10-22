@@ -61,8 +61,8 @@ jobs:
         run: mvn clean test
         
       # Ação para gerar o relatório de testes
-      - name: Generate Test Report
-        run: mvn surefire-report:report -DoutputDirectory=target/surefire-reports/
+      #- name: Generate Test Report
+      #  run: mvn surefire-report:report -DoutputDirectory=target/surefire-reports/
 
       # Ação para armazenar os resultados dos testes
       - name: Archive Test Results
@@ -70,10 +70,11 @@ jobs:
         with:
           name: test-results
           path: target/surefire-reports/
+          if-no-files-found: warn            
 
       # TODO list surefire report files
-      # - name: List Surefire Report files
-      #   run: ls -alh target/surefire-reports/
+      - name: List Surefire Report files
+        run: ls -alh target/surefire-reports/
       
       # Ação para obter os resultados dos testes
       - name: Get test results
