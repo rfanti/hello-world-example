@@ -57,13 +57,13 @@ jobs:
         run: mvn clean test
 
       - name: Generate Code Coverage Report
-        run: mvn jacoco:report  # Removido -DoutputDirectory se não necessário
+        run: mvn jacoco:prepare-agent test jacoco:report -DoutputDirectory=target/jacoco-report/
       
       - name: Archive Test Results
         uses: actions/upload-artifact@v3  # Corrigido para v2
         with:
           name: test-results
-          path: target/site/jacoco/  # Ajustado para o caminho padrão
+          path: target/jacoco-report/
           if-no-files-found: warn
       
       # Sonar Linkado diretamente pelo GitHub
