@@ -65,7 +65,7 @@ jobs:
         run: mvn jacoco:report -DoutputDirectory=target/jacoco-report/
       
       - name: Archive Test Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: test-results
           path: target/jacoco-report/
