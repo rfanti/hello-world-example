@@ -61,8 +61,8 @@ jobs:
         run: mvn clean test
         
       # Ação para gerar o relatório de testes
-      #- name: Generate Test Report
-      #  run: mvn surefire-report:report -DoutputDirectory=target/surefire-reports/
+      - name: Generate Test Report
+        run: mvn surefire-report:report -DoutputDirectory=target/surefire-reports/
 
       # Ação para armazenar os resultados dos testes
       - name: Archive Test Results
