@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Classe de teste para a classe HelloWorld.
  */
-class HelloTest {
+class HelloWorldTest {
 
     /**
      * Testa o método getHello() com o nome "José".
