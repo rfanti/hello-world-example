@@ -60,7 +60,7 @@ jobs:
         run: mvn jacoco:report  # Removido -DoutputDirectory se não necessário
       
       - name: Archive Test Results
-        uses: actions/upload-artifact@v2  # Corrigido para v2
+        uses: actions/upload-artifact@v3  # Corrigido para v2
         with:
           name: test-results
           path: target/site/jacoco/  # Ajustado para o caminho padrão
