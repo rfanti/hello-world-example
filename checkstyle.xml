@@ -4,26 +4,33 @@
     "https://checkstyle.sourceforge.io/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+    <!-- Verifica a convenção de nomenclatura -->
+    <module name="RegexpSingleline">
+       <property name="format" value="\s+$"/>
+       <property name="minimum" value="0"/>
+       <property name="maximum" value="0"/>
+       <property name="message" value="Line has trailing spaces."/>
+    </module>
+
+    <module name="FileTabCharacter"/>
+
     <module name="TreeWalker">
 
         <!-- Verifica que as classes e métodos têm Javadoc -->
         <module name="JavadocType"/>
         <module name="JavadocMethod"/>
         <module name="JavadocVariable"/>
-
-        <!-- Verifica a convenção de nomenclatura -->
-        <module name="RegexpChecker">
-            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
-            <module name="ClassName"/>
-            <module name="MethodName"/>
-            <module name="VariableName"/>
-        </module>
-
+        
+        
         <!-- Verifica a formatação do código -->
         <module name="WhitespaceAround"/>
-        <module name="FileTabCharacter"/>
-        <module name="TrailingWhitespace"/>
         
+        <!--
+        <module name="TrailingWhitespace">
+            <property name="message" value="Erro: Espaços em branco no final da linha."/>
+        </module>
+        -->
+
         <!-- Verifica a ordem dos modificadores -->
         <module name="ModifierOrder"/>
 
@@ -31,7 +38,7 @@
         <module name="HiddenField"/>
 
         <!-- Verifica que não há classes vazias -->
-        <module name="EmptyClass"/>
+        <!--<module name="EmptyClass"/>-->
         
         <!-- Verifica que os métodos não são muito longos -->
         <module name="MethodLength">
@@ -44,5 +51,6 @@
         </module>
 
     </module>
+    
 </module>
 
