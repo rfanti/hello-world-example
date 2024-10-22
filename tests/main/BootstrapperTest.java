@@ -9,6 +9,9 @@ package main;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 
 /**
  * Classe de teste para a classe Bootstrapper.
